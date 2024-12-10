@@ -1,7 +1,7 @@
 import React from 'react';
 import { CompositePolicy, Policy, PolicyType } from '../../types/PolicyTypes';
 import { PolicyCard } from '../PolicyCard/PolicyCard';
-import { Input } from '../common/Input';
+import { Input } from '../ui/input';
 import { createNewPolicy } from '../../utils/policyUtils';
 import { SubPolicySelect } from '../common/SubPolicySelect';
 
@@ -60,7 +60,6 @@ export const CompositePolicyEditor: React.FC<{
       <div className="config-section">
         <h3>Basic Configuration</h3>
         <Input
-          label="Max Total Spans Per Second"
           type="number"
           min="0"
           value={policy.maxTotalSpansPerSecond}
@@ -68,7 +67,6 @@ export const CompositePolicyEditor: React.FC<{
             ...policy,
             maxTotalSpansPerSecond: Number(e.target.value)
           })}
-          helpText="Maximum number of spans to process per second (0 for unlimited)"
         />
       </div>
 

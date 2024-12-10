@@ -1,6 +1,6 @@
 import React from 'react';
 import { SpanCountPolicy } from '../../types/PolicyTypes';
-import { Input } from '../common/Input';
+import { Input } from '../ui/input';
 
 interface SpanCountPolicyEditorProps {
   policy: SpanCountPolicy;
@@ -21,7 +21,6 @@ export const SpanCountPolicyEditor: React.FC<SpanCountPolicyEditorProps> = ({
   return (
     <div className="policy-editor">
       <Input
-        label="Minimum Spans"
         type="number"
         min="0"
         value={policy.minSpans}
@@ -29,7 +28,6 @@ export const SpanCountPolicyEditor: React.FC<SpanCountPolicyEditorProps> = ({
         placeholder="Enter minimum number of spans"
       />
       <Input
-        label="Maximum Spans"
         type="number"
         min="0"
         value={policy.maxSpans}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { RateLimitingPolicy } from '../../types/PolicyTypes';
-import { Input } from '../common/Input';
+import { Input } from '../ui/input';
 
 interface RateLimitingPolicyEditorProps {
   policy: RateLimitingPolicy;
@@ -14,7 +14,6 @@ export const RateLimitingPolicyEditor: React.FC<RateLimitingPolicyEditorProps> =
   return (
     <div className="policy-editor">
       <Input
-        label="Spans Per Second"
         type="number"
         min="0"
         value={policy.spansPerSecond}

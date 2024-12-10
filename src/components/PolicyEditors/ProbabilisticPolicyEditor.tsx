@@ -1,6 +1,6 @@
 import React from 'react';
 import { ProbabilisticPolicy } from '../../types/PolicyTypes';
-import { Input } from '../common/Input';
+import { Input } from '../ui/input';
 
 interface ProbabilisticPolicyEditorProps {
   policy: ProbabilisticPolicy;
@@ -14,7 +14,6 @@ export const ProbabilisticPolicyEditor: React.FC<ProbabilisticPolicyEditorProps>
   return (
     <div className="policy-editor">
       <Input
-        label="Sampling Percentage"
         type="number"
         min="0"
         max="100"

@@ -1,6 +1,6 @@
 import React from 'react';
 import { BooleanTagPolicy } from '../../types/PolicyTypes';
-import { Input } from '../common/Input';
+import { Input } from '../ui/input';
 
 interface BooleanTagPolicyEditorProps {
   policy: BooleanTagPolicy;
@@ -14,7 +14,6 @@ export const BooleanTagPolicyEditor: React.FC<BooleanTagPolicyEditorProps> = ({
   return (
     <div className="policy-editor">
       <Input
-        label="Key"
         value={policy.key}
         onChange={(e) => onUpdate({
           ...policy,

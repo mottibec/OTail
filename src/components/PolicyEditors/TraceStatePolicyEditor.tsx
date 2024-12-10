@@ -1,6 +1,6 @@
 import React from 'react';
 import { TraceStatePolicy } from '../../types/PolicyTypes';
-import { Input } from '../common/Input';
+import { Input } from '../ui/input';
 
 interface TraceStatePolicyEditorProps {
   policy: TraceStatePolicy;
@@ -44,7 +44,6 @@ export const TraceStatePolicyEditor: React.FC<TraceStatePolicyEditorProps> = ({
   return (
     <div className="policy-editor">
       <Input
-        label="Trace State Key"
         value={policy.key}
         onChange={(e) => handleKeyChange(e.target.value)}
         placeholder="Enter trace state key"

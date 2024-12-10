@@ -1,6 +1,6 @@
 import React from 'react';
 import { LatencyPolicy } from '../../types/PolicyTypes';
-import { Input } from '../common/Input';
+import { Input } from '../ui/input';
 
 interface LatencyPolicyEditorProps {
   policy: LatencyPolicy;
@@ -21,7 +21,6 @@ export const LatencyPolicyEditor: React.FC<LatencyPolicyEditorProps> = ({
   return (
     <div className="policy-editor">
       <Input
-        label="Lower Threshold (ms)"
         type="number"
         min="0"
         value={policy.thresholdMs}
@@ -30,7 +29,6 @@ export const LatencyPolicyEditor: React.FC<LatencyPolicyEditorProps> = ({
       />
 
       <Input
-        label="Upper Threshold (ms)"
         type="number"
         min={policy.thresholdMs || 0}
         value={policy.upperThresholdMs}

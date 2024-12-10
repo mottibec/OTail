@@ -1,11 +1,11 @@
 import React from 'react';
-import './App.css';
 import { ConfigEditor } from './components/ConfigEditor/ConfigEditor';
 import { RecipesProvider } from './context/RecipesContext';
 import { ThemeProvider } from './context/ThemeContext';
 import { Analytics } from '@vercel/analytics/react';
 import { ModeProvider } from './context/ModeContext';
 import { Nav } from './components/common/Nav';
+import Layout from './layout';
 
 function App() {
   return (
@@ -18,6 +18,9 @@ function App() {
             </header>
             <main>
               <ConfigEditor />
+              <Layout>
+                <></>
+              </Layout>
             </main>
             <Analytics />
           </div>

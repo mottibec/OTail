@@ -1,6 +1,6 @@
 import React from 'react';
 import { StringAttributePolicy } from '../../types/PolicyTypes';
-import { Input } from '../common/Input';
+import { Input } from '../ui/input';
 import './StringAttributePolicyEditor.css';
 
 interface StringAttributePolicyEditorProps {
@@ -25,11 +25,9 @@ export const StringAttributePolicyEditor: React.FC<StringAttributePolicyEditorPr
       <div className="string-config-section">
         <h3>Basic Configuration</h3>
         <Input
-          label="Attribute Key"
           value={policy.key}
           onChange={(e) => updateField('key', e.target.value)}
           placeholder="e.g., http.method, user.id"
-          helpText="The attribute key to match against"
         />
       </div>
       <div className="string-config-section">
@@ -71,14 +69,13 @@ export const StringAttributePolicyEditor: React.FC<StringAttributePolicyEditorPr
 
         {policy.enabledRegexMatching && (
           <div className="cache-config">
-            <Input
-              label="Cache Size"
+            <Input            
               type="number"
               min="1000"
               step="1000"
               value={policy.cacheMaxSize}
               onChange={(e) => updateField('cacheMaxSize', Number(e.target.value))}
-              helpText="Number of regex results to cache (recommended: 10000)"
+              placeholder="e.g., 10000"
             />
           </div>
         )}
