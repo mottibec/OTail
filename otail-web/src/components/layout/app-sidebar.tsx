@@ -1,4 +1,4 @@
-import { Telescope, LogOut, Users, Wrench, Palette, Share2 } from "lucide-react"
+import { Telescope, LogOut, Users, Wrench, Palette, Share2, Network, Layers } from "lucide-react"
 import { ThemeToggle } from "@/components/layout/theme-toggle"
 import { AnalyticsToggle } from "@/components/layout/analytics-toggle"
 import { Checklist } from "@/components/Checklist"
@@ -25,8 +25,8 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 
-const noAuthRequired = import.meta.env.VITE_NO_AUTH_REQUIRED === 'true'
-const items = !noAuthRequired
+const noBackend = import.meta.env.VITE_NO_BACKEND === 'true'
+const items = !noBackend
   ? [
     {
       title: "Policy Builder",
@@ -37,6 +37,11 @@ const items = !noAuthRequired
       title: "Agents",
       url: "/agents",
       icon: Telescope,
+    },
+    {
+      title: "Agent Groups",
+      url: "/agent-groups",
+      icon: Layers,
     },
     {
       title: "Canvas",
@@ -50,10 +55,10 @@ const items = !noAuthRequired
       badge: "New"
     },
     {
-      title: "Organization",
-      url: "/organization",
-      icon: Users,
-    },
+      title: "Deployments",
+      url: "/deployments",
+      icon: Network,
+    }
   ]
   : [
     {
@@ -71,7 +76,7 @@ const items = !noAuthRequired
       url: "/pipelines",
       icon: Share2,
       badge: "New"
-    },
+    }
   ];
 
 export function AppSidebar() {

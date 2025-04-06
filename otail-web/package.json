@@ -1,7 +1,7 @@
 {
-  "name": "otail-v2",
+  "name": "otail",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "node scripts/build-wasm.js && vite",
@@ -38,6 +38,7 @@
     "@types/react-beautiful-dnd": "^13.1.8",
     "@types/reactour": "^1.18.5",
     "@vercel/analytics": "^1.4.1",
+    "axios": "^1.8.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",

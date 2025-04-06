@@ -7,7 +7,10 @@ import Agents from './pages/agents'
 import Login from './pages/auth/login'
 import Register from './pages/auth/register'
 import Organization from './pages/organization'
-import Dashboard from './pages/Dashboard'
+import Dashboard from './pages/home/Dashboard'
+import Deployments from './pages/deployments/Deployments'
+import DeploymentDetails from './pages/deployments/DeploymentDetails'
+import AgentGroups from './pages/agent-groups'
 import { ThemeProvider } from "@/hooks/use-theme"
 import { AuthProvider, useAuth } from '@/hooks/use-auth'
 import { Toaster } from "@/components/ui/toaster"
@@ -15,7 +18,7 @@ import { MobileWarning } from '@/components/MobileWarning'
 import { ActivePipelineProvider } from '@/hooks/use-active-pipeline'
 import { ChecklistProvider } from '@/contexts/ChecklistContext'
 
-const noAuthRequired = import.meta.env.VITE_NO_AUTH_REQUIRED === 'true'
+const noBackend = import.meta.env.VITE_NO_BACKEND === 'true'
 
 function RequireAuth({ children }: { children: JSX.Element }) {
   const { isAuthenticated, isLoading } = useAuth();
@@ -51,7 +54,7 @@ function App() {
                     <Register />
                   </div>
                 } />
-                {noAuthRequired ? (
+                {noBackend ? (
                   <Route element={<Layout />}>
                     <Route path="/" element={<Dashboard />} />
                     <Route path="/sampling" element={<Sampling />} />
@@ -65,6 +68,9 @@ function App() {
                     <Route path="/canvas" element={<CanvasPage />} />
                     <Route path="/agents" element={<Agents />} />
                     <Route path="/organization" element={<Organization />} />
+                    <Route path="/deployments" element={<Deployments />} />
+                    <Route path="/deployments/:id" element={<DeploymentDetails />} />
+                    <Route path="/agent-groups" element={<AgentGroups />} />
                     <Route path="/pipelines" element={<Pipelines />} />
                   </Route>
                 )}
